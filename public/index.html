@@ -27,6 +27,42 @@
     <title>React App with Gary, John, Liz, Dennis, Lauren, and Ryan</title>
   </head>
   <body>
+    <div class="topnav">
+      <a class="active" href="#home">Home</a>
+      <a href="#calendar">Calendar</a>
+      <a href="#contact">Contact</a>
+      <a href="#about">About</a>
+    </div>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+  
+      .topnav {
+        overflow: hidden;
+        background-color: #000;
+      }
+  
+      .topnav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+      }
+  
+      .topnav a:hover {
+        background-color: #40B2C2;
+        color: black;
+      }
+  
+      .topnav a.active {
+        background-color: #4071C2;
+        color: white;
+      }
+    </style>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--
