@@ -1,6 +1,15 @@
-# Getting Started with Create React App
+# Friendlendar
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Friendlendar is a Web Application that provides group calendars for friends to organize and schedule events. Users can create or join existing groups to propose events.
+
+## Installation and running the Web App
+
+1. pull friendlendar
+2. install node 16  https://nodejs.org/en/download/
+3. install in terminal yarn "npm install --global yarn” (Make sure to run in admin/root or use sudo if you're using Mac/Linux)
+4. cd friendlendar
+5. yarn
+6. yarn start
 
 ## Available Scripts
 
