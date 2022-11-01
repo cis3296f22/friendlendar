@@ -1,7 +1,10 @@
-import { queryByTestId, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import { Calendar } from 'react-calendar';
 import App from './App';
 
 test('renders learn react link', () => {
   render(<App />);
-  expect(queryByTestId('this-does-not-exist')).not.toBeInTheDocument();
+  
+  const linkElement = screen.getByText(/2022/i);
+  expect(linkElement).toBeInTheDocument();
 });
