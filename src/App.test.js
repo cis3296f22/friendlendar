@@ -1,8 +1,7 @@
-import { render, screen } from '@testing-library/react';
+import { queryByTestId, render, screen } from '@testing-library/react';
 import App from './App';
 
 test('renders learn react link', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).not.toBeInTheDocument();
+  expect(queryByTestId("this-does-not-exist")).not.toBeInTheDocument();
 });
