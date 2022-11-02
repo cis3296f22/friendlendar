@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'friendlendar'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_2D7B9A2F6C644654AF39C4BF052BE181 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_FF41F124ACD1438F9998575558A667EC }}
           package: .
