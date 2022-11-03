@@ -24,7 +24,7 @@ function App() {
   return (
     <div className="App">
       <h1 className="App-header">Friendlendar</h1>
-      <div className="Calender-alignment">
+      <div className="centered">
        <Calendar onChange={setDate} value={date} onClickDay={() => setShowTime(true)}/>
       </div>
    
