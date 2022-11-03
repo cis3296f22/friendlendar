@@ -17,3 +17,10 @@
 .App-link {
   color: #61dafb;
 }
+
+.centered {
+  height: 50vh; /* Magic here */
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
