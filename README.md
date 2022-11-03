@@ -2,6 +2,8 @@
 
 Friendlendar is a Web Application that provides group calendars for friends to organize and schedule events. Users can create or join existing groups to propose events.
 
+Link: https://main.d2o0lewmlhlucu.amplifyapp.com/#/home
+
 ## Installation and running the Web App
 
 1. pull friendlendar
