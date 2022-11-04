@@ -34,6 +34,7 @@
             font-weight: bold;
             letter-spacing: 0.2rem; /* spaces out letters a bit */
             white-space: nowrap;  /* don't allow the title to wrap */
+            color:#ffffff
         }
         
         #nav {
@@ -45,9 +46,9 @@
             white-space: nowrap;  /* don't allow nav links to wrap */
         }
         
-        #nav a:link { color: #2C1D0D; } /* black*/
-        #nav a:visited { color: #9BF388; } /* greenish*/
-        #nav a:hover { color: #FD3922; } /* reddish */
+        #nav a:link { color: #ffffff; } /* white */
+        #nav a:visited { color: #EAD6B9; } /* sandy tan color */
+        #nav a:hover { color: #000000; } /* black */
         
         #content {
             padding: 1rem;

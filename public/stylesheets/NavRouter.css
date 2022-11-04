@@ -1,11 +1,11 @@
 .NavRouter {
     white-space: nowrap;  /* do not want any text to wrap in the NavRouter */
-    color:black;
+    color:rgb(255, 255, 255);
 }
 
 .NavRouter a { 
     text-decoration: none;  /* Do not want links in the NavRouter to be underlined */   
-    color:black;
+    color:rgb(255, 255, 255);
 }
 
 .NavRouter .NavGroup {
