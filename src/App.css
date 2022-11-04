@@ -24,3 +24,29 @@
   justify-content: center;
   align-items: flex-end;
 }
+
+.times_parent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.times {
+  display: flex;
+  flex-wrap: wrap;
+  width: 25%;
+  align-items: center;
+  justify-content: center;
+}
+
+.times .choices {
+  width: 50px;
+  margin: 5px;
+  text-align: center;
+}
+
+.display_message {
+  font-size: 50px;
+  color: red;
+  font-weight: bold;
+}
