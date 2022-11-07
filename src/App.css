@@ -19,7 +19,7 @@
 }
 
 .centered {
-  height: 50vh; /* Magic here */
+  height: auto; /* Magic here */
   display: flex;
   justify-content: center;
   align-items: flex-end;
