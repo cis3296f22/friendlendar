@@ -8,7 +8,7 @@
         body { 
             margin:0;                   /* no white border around browser window */
             font-family: open sans;    /* sans-serif*/ /* no tails on the font like Times New Roman */
-            background-color: #EAD6B9;  /* light grey - will show through the content area */
+            background-color: #C1C6C8;  /* light grey - will show through the content area */
         }
         
         #titleNav {
@@ -23,7 +23,7 @@
             flex-direction: column; 
         
             padding: 0.5rem;
-            background-color: #458ED3; /* blue */ 
+            background-color: #9D2235; /* cherry red */ 
         
             /* give a little "3D"  effect to the edges of titleNav and footer */
             box-shadow: 0px 0px 5px black;  
@@ -47,7 +47,7 @@
         }
         
         #nav a:link { color: #ffffff; } /* white */
-        #nav a:visited { color: #EAD6B9; } /* sandy tan color */
+        #nav a:visited { color: #ffffff; } /* sandy tan color */
         #nav a:hover { color: #000000; } /* black */
         
         #content {
@@ -60,7 +60,7 @@
         }
         
         #footer {
-            background-color:   #EFAEB3; 
+            background-color:   #9D2235; 
         
             /* give a little "3D"  effect to the edges of titleNav and footer */
             box-shadow: 0px 0px 5px #888888;  
