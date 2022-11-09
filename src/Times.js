@@ -23,6 +23,7 @@ return (
     return (
     <div class="choices">
       <button onClick={(e)=> displayInfo(e)}> {times} </button>
+      {/* <button onClick={()=><div><Modal /></div>}> </button> */}
     </div>
         )
      })}
