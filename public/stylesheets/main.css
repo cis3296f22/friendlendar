@@ -40,7 +40,7 @@
         #nav {
             font-size: 0.7rem;
             font-weight: bold;
-            text-align:right;
+            text-align:left;
             padding-top: 0.5rem;
             padding-right: 1rem;
             white-space: nowrap;  /* don't allow nav links to wrap */
