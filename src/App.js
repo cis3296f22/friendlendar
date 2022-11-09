@@ -4,49 +4,40 @@ import './App.css';
 import './Calendar.css';
 import React, { useState } from 'react';
 import Calendar from 'react-calendar';
-import Event from './Event.js';
-import Popup from 'reactjs-popup';
-import 'reactjs-popup/dist/index.css';
-
-const Modal = () => (
-  <Popup trigger={<button className="button"> Open Modal </button>} modal>
-    <span> Modal content </span>
-  </Popup>
-);
+import CreateEventModal from './CreateEventModal';
 
 
 function App() {
   const [date, setDate] = useState(new Date());
-  const [showTime, setShowTime] = useState(false) 
+  // const [showTime, setShowTime] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  // const [eventData, setEventData] = useState([])
+  const dateClicked = (value) => {
+    setShowModal(true)
+    setDate(value)
+  }
+  //const dataArray = [{date: "jan 1", filledIn: true}, {}, {}]
+
+  //Pulling from user database
+  // const getDateInfoForAll = () => {
+  //   //call api to get the stuff => Data
+  //   setEventData(Data)
+  // }
+
+  // useEffect(() => {
+  //   getDateInfoForAll()
+  // }, [])
+  
 
   return (
     <div className="App">
       <h1 className="App-header">Friendlendar</h1>
 
-    <div>
-    <Modal />
-    </div>
+    <CreateEventModal date={date} closeModal={setShowModal} open={showModal}></CreateEventModal>
 
       <div className="centered">
-       <Calendar onChange={setDate} value={date} onClickDay={() => setShowTime(true)}/>
+       <Calendar onChange={setDate} value={date} onClickDay={(value) => dateClicked(value)}/>
       </div>
-   
-      {date.length > 0 ? (
-      <p>
-        <span>Start:</span>
-        {date[0].toDateString()}
-        &nbsp;
-        &nbsp;
-        <span>End:</span>{date[1].toDateString()}
-      </p>
-             ) : (
-      <p>
-         <span>Default selected date:</span>{date.toDateString()}
-      </p> 
-             )
-      }
-      <Event showTime={showTime} date={date}/>
-   
     </div>
      );
 
