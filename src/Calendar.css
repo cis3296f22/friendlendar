@@ -1,5 +1,6 @@
 .react-calendar {
-    width: 350px;
+    width: 1400px;
+    height: fit-content;
     max-width: 100%;
     background: white;
     border: 1px solid #a0a096;
@@ -114,4 +115,7 @@
   }
   .react-calendar--selectRange .react-calendar__tile--hover {
     background-color: #e6e6e6;
+  }
+  .react-calendar__navigation__label__labelText{
+    font-size: 1.5em;
   }
