@@ -30,10 +30,11 @@ function App() {
   
 
   return (
+    
     <div className="App">
       <h1 className="App-header">Friendlendar</h1>
 
-    <CreateEventModal date={date} closeModal={setShowModal} open={showModal}></CreateEventModal>
+      <CreateEventModal date={date} closeModal={setShowModal} open={showModal}></CreateEventModal>
 
       <div className="centered">
        <Calendar onChange={setDate} value={date} onClickDay={(value) => dateClicked(value)}/>
