@@ -4,7 +4,7 @@ var account = {};
 (function(){
 account.logon = function () {
 
-   /* var userDiv = document.createElement("div");
+   var userDiv = document.createElement("div");
     userDiv.classList.add("find");
 
     var userEmail = document.createElement('span');
@@ -35,9 +35,10 @@ account.logon = function () {
 
     submitButton.onclick = function () {
 
+        console.log("API still in progress");
         // You have to encodeURI user input before putting into a URL for an AJAX call.
         // Otherwise, your URL may be refused (for security reasons) by the web server.
-        var url = "webAPIs/logonAPI.jsp?email=" + escape(userEmailInput.value) + "&password=" + escape(userPassInput.value);
+       /* var url = "webAPIs/logonAPI.jsp?email=" + escape(userEmailInput.value) + "&password=" + escape(userPassInput.value);
 
         console.log("onclick function will make AJAX call with url: " + url);
         msgDiv.innerHTML = ajax(url, processLogon, msgDiv);
@@ -55,12 +56,12 @@ account.logon = function () {
                 message += "<br/>User Role: " + user.userRoleId + " " + user.userRoleType;
             }
             msgDiv.innerHTML = message;
-        }
+        }/*/
     };
-    return userDiv;*/
+    return userDiv;
 };
 
-account.getProfile = function () {
+account.createNewAccount = function () {
     
     /*var userDiv = document.createElement("div");
     userDiv.classList.add("find");
@@ -91,7 +92,22 @@ account.getProfile = function () {
 };
 
 account.logoff = function () {
-    /*var logOffDiv = document.createElement("div");
+
+    var logoff = document.createElement("div");
+    logoff.innerHTML = "Are You Sure?";
+    
+    var submitButton = document.createElement("button");
+    submitButton.innerHTML = "Yes";
+    logoff.appendChild(submitButton);
+
+    submitButton.onclick = function () {
+        logoff.innerHTML = "<br>Logging Off";
+        console.log("Logging Off")
+    };
+    
+    return logoff;
+    /*
+    var logOffDiv = document.createElement("div");
     logOffDiv.classList.add("find");
     var url = "webAPIs/logOffAPI.jsp";
     logOffDiv.innerHTML = ajax(url, processLogoff, logOffDiv);
