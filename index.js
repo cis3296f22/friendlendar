@@ -28,7 +28,7 @@ app.get('/deletenums', async (req, res) => {
   res.end('Deleted');
 });
 
-// post method to insert into database from html form
+// post method to insert into database from html
 app.post('/insert', function(req, res) {
   var input_test = req.body.test;
   DB.run('INSERT INTO numbers (num) VALUES (?)', input_test);
