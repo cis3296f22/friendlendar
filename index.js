@@ -1,7 +1,12 @@
 const sqlite3 = require('sqlite3');
 const { open } = require('sqlite');
 const express = require("express");
+// body parser to parse html
+const bodyParser = require('body-parser');
 const app = express();
+
+// parser 
+app.use(bodyParser.urlencoded({ extended: true }));
 
 let DB;
 open({
@@ -21,6 +26,13 @@ app.get('/addNumber', async (req, res) => {
 app.get('/deletenums', async (req, res) => {
   await DB.exec('DELETE FROM numbers');
   res.end('Deleted');
+});
+
+// post method to insert into database from html
+app.post('/insert', function(req, res) {
+  var input_test = req.body.test;
+  DB.run('INSERT INTO numbers (num) VALUES (?)', input_test);
+  res.end('Number received ' + input_test);
 });
 
 app.use(express.static('./build'));
