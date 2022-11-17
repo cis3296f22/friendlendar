@@ -5,6 +5,7 @@ import './Calendar.css';
 import React, { useState } from 'react';
 import Calendar from 'react-calendar';
 import CreateEventModal from './CreateEventModal';
+import {post} from './utils.js';
 
 
 function App() {
@@ -16,6 +17,11 @@ function App() {
     setShowModal(true)
     setDate(value)
   }
+
+  const dateObject = post('/getSavedEvents', {});
+
+  console.log(dateObject);
+
   //const dataArray = [{date: "jan 1", filledIn: true}, {}, {}]
 
   //Pulling from user database

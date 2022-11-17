@@ -10,4 +10,8 @@ export async function post(url, data) {
   }
 
 
-  post('/getSavedEvents', {}).then(console.log);
+export async function returnPostData(){
+  const res = await post('/getSavedEvents', {});
+  const data = await res.json();
+  return data;
+}
