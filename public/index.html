@@ -1,86 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    
-    <title>React App with Gary, John, Liz, Dennis, Lauren, and Ryan</title>
-    <link href="stylesheets/main.css" rel="stylesheet" type="text/css" />  
-    <link href="stylesheets/NavRouter.css" rel="stylesheet" type="text/css" /> 
-  </head>
-  <body>
-    <div id="titleNav">
-      <div id="nav">
-             ⒸTempleUniversity
-      </div>
-      <div id="title">
-        Friendlendar
-      </div>
-      
+
+  <title>React App with Gary, John, Liz, Dennis, Lauren, and Ryan</title>
+  <link href="stylesheets/main.css" rel="stylesheet" type="text/css" />
+  <link href="stylesheets/NavRouter.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+  <div id="titleNav">
+    <div id="nav">
+      ⒸTempleUniversity
+    </div>
+    <div id="title">
+      Friendlendar
+    </div>
+
   </div>
-    <script src="js/MakeNavRouter.js"></script>
-    <script src="js/account.js"></script>
-    <script src="js/homeContent.js"></script>
-    <script src="js/calendarContent.js"></script>
+  <script src="js/MakeNavRouter.js"></script>
+  <script src="js/account.js"></script>
+  <script src="js/homeContent.js"></script>
+  <script src="js/calendarContent.js"></script>
 
-    <div id="content">
+  <div id="content">
 
-      <!-- HTML comment: 
+    <!-- HTML comment: 
           The content div is empty. It will get content "injected into it"
           by the NavRouter component.
       -->
 
-    </div>
+  </div>
 
-    <div id="container"></div> <!-- this acts as a global variable? -->
+  <div id="container"></div> <!-- this acts as a global variable? -->
 
-    <script>
-      // Home | Account | Calendar
+  <script>
+    // Home | Account | Calendar
 
-      var myNavList = [
+    var myNavList = [
 
-          // action attribute is a function name - no quotes aroudnd home.
-          {linkText: "Home", linkURL: "#/home", action: homeContent},
-          {
-              header: "Account",
-              subMenu: [
+      // action attribute is a function name - no quotes aroudnd home.
+      { linkText: "Home", linkURL: "#/home", action: homeContent },
+      {
+        header: "Account",
+        subMenu: [
 
-                  // These links show up in nav bar but not functional because 
-                  // we don't know what database we will be using
-                  {linkText: "Log On", linkURL: "#/logon", action: account.logon},
-                  {linkText: "Log Out", linkURL: "#/logoff", action: account.logoff},
-                  {linkText: "New Account", linkURL: "#/newaccount", action: account.createNewAccount},
-                  {linkText: "Get Profile", linkURL: "#/profile"}
+          // These links show up in nav bar but not functional because 
+          // we don't know what database we will be using
+          { linkText: "Log On", linkURL: "#/logon", action: account.logon },
+          { linkText: "Log Out", linkURL: "#/logoff", action: account.logoff },
+          { linkText: "New Account", linkURL: "#/newaccount", action: account.createNewAccount },
+          { linkText: "Get Profile", linkURL: "#/profile" }
 
-              ]
-          },
-          {linkText: "Calendar", linkURL: "#/Calendar", action: calendarContent}
-      ];
+        ]
+      },
+      { linkText: "Calendar", linkURL: "#/Calendar", action: calendarContent }
+    ];
 
-      var myNav = MakeNavRouter({
-          navId: "nav", // this is where the nav bar will be injected
-          navList: myNavList, // the list of link objects (linkText, linkURL, actions)
-          contentId: "content", // the id where content is to be injected
-          startLink: "#/home"     // routing will set this as the first link. 
-      });
+    var myNav = MakeNavRouter({
+      navId: "nav", // this is where the nav bar will be injected
+      navList: myNavList, // the list of link objects (linkText, linkURL, actions)
+      contentId: "content", // the id where content is to be injected
+      startLink: "#/home"     // routing will set this as the first link. 
+    });
 
   </script>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
 
-    <!--
-      This HTML file is a template.
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+     <!-- This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
 
       You can add webfonts, meta tags, or analytics to this file.
@@ -89,6 +88,12 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-    
-  </body>
+
+
+    <!-- HTML TESTING FORM FOR DATABASE ENTRY -->
+    <form action="/insert" method="post">
+      <input id="test" type="text" name="test">
+      <input type="submit" value="Submit">
+    </form>
+</body>
 </html>
