@@ -6,15 +6,17 @@ const bodyParser = require('body-parser');
 const app = express();
 
 // parser 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 let DB;
 open({
   filename: './database.sqlite',
   driver: sqlite3.Database
-}).then((db) => {
+}).then(async (db) => {
   DB = db;
-  DB.run('CREATE TABLE IF NOT EXISTS numbers (num INT)');
+  await DB.run('CREATE TABLE IF NOT EXISTS numbers (num INT)');
+  await DB.run('CREATE TABLE IF NOT EXISTS dateEntry (start INT, end INT)');
+  await DB.run('DELETE FROM dateEntry WHERE start IS NULL');
 });
 
 app.get('/addNumber', async (req, res) => {
@@ -29,11 +31,19 @@ app.get('/deletenums', async (req, res) => {
 });
 
 // post method to insert into database from html
-app.post('/insert', function(req, res) {
-  var input_test = req.body.test;
-  DB.run('INSERT INTO numbers (num) VALUES (?)', input_test);
-  res.end('Number received ' + input_test);
+app.post('/insert', async (req, res) => {
+  const {start, end} = req.body;
+  if(start > end){
+    res.statusCode = 400;
+    res.end();
+    return;
+  }
+  console.log(start, end);
+  await DB.run('INSERT INTO dateEntry (start, end) VALUES (?,?) ',
+    start, end
+  )
+  res.end(JSON.stringify({Text: 'Added to database'}));
 });
 
 app.use(express.static('./build'));
-app.listen(80, () => console.log('listening on port 80'));
+app.listen(80, () => {console.log('listening on port 80'); console.log('http://127.0.0.1:80');});

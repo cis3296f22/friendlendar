@@ -4,6 +4,7 @@ import {CardActions, Typography, CardContent, Button, Modal, Card, FormControl, 
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { DateTimePicker} from '@mui/x-date-pickers/DateTimePicker';
+import {post} from './utils.js'
 
 function CreateEventModal(props) {
 
@@ -51,7 +52,14 @@ function CreateEventModal(props) {
                         <CardActions>
                             <Button onClick={() => props.closeModal(false)} size="small">Close</Button>
                              {/* Submit the data */}
-                            <Button onClick={() => props.closeModal(false)} size='small' align='right'>Submit</Button>
+                            <Button onClick={ async () => {props.closeModal(false);
+                                const start = new Date(startDate).getTime();
+                                const end = new Date(endDate).getTime();
+                                console.log(start, end);
+                                
+                                const resolve = await post('/insert', {start, end});
+                                console.log(resolve);
+                            }} size='small' align='right'>Submit</Button>
                         </CardActions>
 
                     </FormControl>
