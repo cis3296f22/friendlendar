@@ -11,6 +11,8 @@ function CreateEventModal(props) {
     const [startDate, setStartDate] = React.useState(null);
     const [endDate, setEndDate] = React.useState(null);
 
+    
+
     return(        
         <div>
             <Modal open={props.open} style={{display:'flex',alignItems:'center',justifyContent:'center'}} onClose={() => props.closeModal(false)}>
@@ -50,16 +52,19 @@ function CreateEventModal(props) {
 
                         </CardContent>
                         <CardActions>
-                            <Button onClick={() => props.closeModal(false)} size="small">Close</Button>
+                            
+                            <Button style={{display:'flex',alignItems:'center',justifyContent:'center'}} onClick={() => props.closeModal(false)} size="small">Close</Button>
                              {/* Submit the data */}
-                            <Button onClick={ async () => {props.closeModal(false);
+                            
+                            <Button style={{display:'flex',alignItems:'center',justifyContent:'center'}}onClick={ async () => {props.closeModal(false);
                                 const start = new Date(startDate).getTime();
                                 const end = new Date(endDate).getTime();
                                 console.log(start, end);
                                 
                                 const resolve = await post('/insert', {start, end});
                                 console.log(resolve);
-                            }} size='small' align='right'>Submit</Button>
+                            }}>Submit</Button>
+                        
                         </CardActions>
 
                     </FormControl>

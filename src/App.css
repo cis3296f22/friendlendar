@@ -25,6 +25,20 @@
   align-items: flex-end;
 }
 
+.buttonHolder{
+  height: auto; /* Magic here */
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.buttonHolder button{
+  background-color: #9D2235;
+  color: white;
+  padding: 5px 15px;
+}
+
+
 .times_parent {
   display: flex;
   align-items: center;
