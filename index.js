@@ -45,5 +45,13 @@ app.post('/insert', async (req, res) => {
   res.end(JSON.stringify({Text: 'Added to database'}));
 });
 
+app.post('/getSavedEvents', async (req, res) =>{
+  res.end(
+    JSON.stringify({
+      Dates: await DB.all('SELECT * FROM dateEntry')
+    })
+  )
+});
+
 app.use(express.static('./build'));
 app.listen(80, () => {console.log('listening on port 80'); console.log('http://127.0.0.1:80');});

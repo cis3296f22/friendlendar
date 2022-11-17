@@ -8,3 +8,6 @@ export async function post(url, data) {
     });
     return await response.json();
   }
+
+
+  post('/getSavedEvents', {}).then(console.log);
