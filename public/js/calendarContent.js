@@ -8,11 +8,27 @@ function calendarContent () {
 
 var content = `
 
-        <h2>Calendar Page!</h2>
+        <h1>Calendar Page!</h1>
    
         <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
        
         <title>React App with Gary, John, Liz, Dennis, Lauren, and Ryan</title>
+
+        <style>
+        
+        body { 
+            background-image: url('https://blog.drupa.com/wp-content/uploads/2015/11/Calendar-1000x605.jpg');
+            background-size: cover;
+            background-blend-mode: lighten;  
+       }
+       
+       h1 {
+         color: #9D2235;
+         text-align: center;
+         font-size: xxx-large;
+       }
+
+       </style>
     `;
         var ele = document.createElement("div");
         ele.innerHTML = content;
