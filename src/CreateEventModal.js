@@ -16,7 +16,7 @@ function CreateEventModal(props) {
     return(        
         <div>
             <Modal open={props.open} style={{display:'flex',alignItems:'center',justifyContent:'center'}} onClose={() => props.closeModal(false)}>
-                <Card sx={{ minWidth: 275 }}>
+                <Card sx={{ minWidth: 275 }} data-cy='modal'>
                     <FormControl >
                         <CardContent>
                             <Typography variant='h4' align='center' gutterBottom>
@@ -53,7 +53,7 @@ function CreateEventModal(props) {
                         </CardContent>
                         <CardActions>
                             
-                            <Button style={{display:'flex',alignItems:'center',justifyContent:'center'}} onClick={() => props.closeModal(false)} size="small">Close</Button>
+                            <Button style={{display:'flex',alignItems:'center',justifyContent:'center'}} onClick={() => props.closeModal(false)} size="small" data-cy='close'>Close</Button>
                              {/* Submit the data */}
                             
                             <Button style={{display:'flex',alignItems:'center',justifyContent:'center'}}onClick={ async () => {props.closeModal(false);
@@ -63,7 +63,7 @@ function CreateEventModal(props) {
                                 
                                 const resolve = await post('/insert', {start, end});
                                 console.log(resolve);
-                            }}>Submit</Button>
+                            }} data-cy='submit'>Submit</Button>
                         
                         </CardActions>
 
