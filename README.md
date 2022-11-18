@@ -2,19 +2,14 @@
 
 Friendlendar is a Web Application that provides group calendars for friends to organize and schedule events. Users can create or join existing groups to propose events.
 
-Link to hosted website: https://main.d2o0lewmlhlucu.amplifyapp.com/#/home
-
 ## Installation of the Web App Locally
 
-For those looking for something more advanced and would like to work with the source code directly:
-
-1. Use github to pull in friendlendar (git pull https://github.com/cis3296f22/friendlendar) in your preferred terminal
+1. Use github to clone friendlendar (git clone https://github.com/cis3296f22/friendlendar) in your preferred terminal.
 2. install node 16  https://nodejs.org/en/download/
 3. install yarn in your preferred terminal "npm install --global yarn” (Make sure to run in admin/root or use sudo if you're using Mac/Linux)
 4. Change directories into the friendlendar folder! (cd friendlendar)
 5. Run yarn install in the terminal (yarn)
 6. Start the site! (yarn start)
-7. If you'd like to edit the code
 
 ## Available Scripts
 
