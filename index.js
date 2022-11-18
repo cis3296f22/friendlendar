@@ -46,10 +46,11 @@ app.post('/insert', async (req, res) => {
 });
 
 app.post('/getSavedEvents', async (req, res) =>{
-  res.end(
-    JSON.stringify({
-      Dates: await DB.all('SELECT * FROM dateEntry')
-    })
+  let dates = await DB.all('SELECT * FROM dateEntry')
+  res.json(
+    {
+      Dates: dates
+    }
   )
 });
 

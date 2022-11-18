@@ -12,6 +12,6 @@ export async function post(url, data) {
 
 export async function returnPostData(){
   const res = await post('/getSavedEvents', {});
-  const data = await res.json();
+  const data = res;
   return data;
 }
