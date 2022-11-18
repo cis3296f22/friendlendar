@@ -45,16 +45,21 @@ function App() {
   }, [])
   console.log(eventData);
   
+  const [toggle,toggleOn]=useState(true)
 
   return (
     
-    <div className="App">
-      <h1 className="App-header">Friendlendar</h1>
-
-      <CreateEventModal date={date} closeModal={setShowModal} open={showModal}></CreateEventModal>
-
-      <div className="centered">
+    <div className="App">{
+      toggle?<h1 className="App-header">Friendlendar</h1>:null
+    }{
+      toggle?<CreateEventModal date={date} closeModal={setShowModal} open={showModal}></CreateEventModal>:null
+    }{
+      toggle?<div className="centered">
        <Calendar onChange={setDate} value={date} onClickDay={(value) => dateClicked(value)}/>
+      </div>:null
+    }
+      <div class="buttonHolder">
+      <button onClick={()=> toggleOn(!toggle)}>Toggle</button>
       </div>
     </div>
      );
