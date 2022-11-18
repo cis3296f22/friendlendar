@@ -64,6 +64,7 @@ function CreateEventModal(props) {
                                 const resolve = await post('/insert', {start, end});
                                 console.log(resolve);
                             }}>Submit</Button>
+                            
                         
                         </CardActions>
 
