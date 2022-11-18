@@ -67,7 +67,7 @@ function App() {
       <ul>
         {eventData.map(artist => (
           <li key={artist.start}>
-            {artist.start}{' '}
+            {Date(artist.start).toString()}{' '}
             <button onClick={() => {
               setEventData(
                 eventData.filter(a =>
