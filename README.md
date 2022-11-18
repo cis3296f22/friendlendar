@@ -10,6 +10,7 @@ Friendlendar is a Web Application that provides group calendars for friends to o
 4. Change directories into the friendlendar folder! (cd friendlendar)
 5. Run yarn install in the terminal (yarn)
 6. Start the site! (yarn start)
+7. Navigate to the site by going to "localhost" in your browser.
 
 ## Available Scripts
 
