@@ -23,7 +23,7 @@
     "webpack-cli": "^4.10.0"
   },
   "scripts": {
-    "start": "node index.js",
+    "start": "node node_modules/react-scripts/scripts/build.js && node index.js",
     "build": "node node_modules/react-scripts/scripts/build.js",
     "test": "node node_modules/react-scripts/scripts/test.js",
     "eject": "node node_modules/react-scripts/scripts/eject.js"

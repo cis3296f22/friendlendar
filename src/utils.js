@@ -8,3 +8,10 @@ export async function post(url, data) {
     });
     return await response.json();
   }
+
+
+export async function returnPostData(){
+  const res = await post('/getSavedEvents', {});
+  const data = res;
+  return data;
+}
