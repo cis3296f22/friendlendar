@@ -43,7 +43,8 @@ function App() {
       setEventData(value.Dates);
     })
   }, [])
-  console.log(eventData);
+
+  console.log(eventData[0]);
   
   const [toggle,toggleOn]=useState(true)
 
@@ -61,6 +62,25 @@ function App() {
       <div class="buttonHolder">
       <button onClick={()=> toggleOn(!toggle)}>Toggle</button>
       </div>
+
+
+      <ul>
+        {eventData.map(artist => (
+          <li key={artist.start}>
+            {artist.start}{' '}
+            <button onClick={() => {
+              setEventData(
+                eventData.filter(a =>
+                  a.start !== artist.start
+                )
+              );
+            }}>
+              Delete
+            </button>
+          </li>
+        ))}
+      </ul>
+
     </div>
      );
 
