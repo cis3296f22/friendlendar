@@ -59,7 +59,7 @@ function App() {
       </div>:null
     }
       <div class="buttonHolder">
-      <button onClick={()=> toggleOn(!toggle)}>Toggle</button>
+      <button onClick={()=> toggleOn(!toggle)} data-cy="toggle">Toggle</button>
       </div>
     </div>
      );
