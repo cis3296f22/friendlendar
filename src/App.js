@@ -5,6 +5,7 @@ import './Calendar.css';
 import React, { useState, useEffect } from 'react';
 import Calendar from 'react-calendar';
 import CreateEventModal from './CreateEventModal';
+import Event from './Event'
 import {post,  returnPostData} from './utils.js';
 
 
@@ -61,6 +62,19 @@ function App() {
       <div class="buttonHolder">
       <button onClick={()=> toggleOn(!toggle)} data-cy="toggle">Toggle</button>
       </div>
+
+      {/* <div>
+          {eventData.map((data) => (
+            <li key={data.start}>{data.start}</li>
+          ))}
+      </div> */}
+
+      <div>
+           {eventData.map( (data) => (
+            <Event key={data} event={data} />
+          ))}  
+      </div>
+
     </div>
      );
 
