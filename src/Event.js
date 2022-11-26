@@ -8,11 +8,11 @@ const Event = ({event}) => (
     <CardContent>
       <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
         Start:
-        <li key={event.start}>{event.start}</li>
+        <li key={event.start}>{Date(event.start).toString()}</li>
       </Typography>
       <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
         End:
-        <li key={event.end}>{event.end}</li>
+        <li key={event.end}>{Date(event.end).toString()}</li>
       </Typography>
     </CardContent>
   </Card>
