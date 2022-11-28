@@ -6,7 +6,7 @@ import React, { useState, useEffect } from 'react';
 import Calendar from 'react-calendar';
 import CreateEventModal from './CreateEventModal';
 import Event from './Event'
-import {post,  returnPostData} from './utils.js';
+import {get} from './utils.js';
 
 
 function App() {
@@ -40,7 +40,7 @@ function App() {
   // }
 
   useEffect(() => {
-    returnPostData().then(value =>{
+    get("/event").then(value =>{
       setEventData(value.Dates);
     })
   }, [])
