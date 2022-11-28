@@ -14,24 +14,13 @@ open({
   driver: sqlite3.Database
 }).then(async (db) => {
   DB = db;
-  await DB.run('CREATE TABLE IF NOT EXISTS numbers (num INT)');
-  await DB.run('CREATE TABLE IF NOT EXISTS dateEntry (start INT, end INT, title TEXT, description TEXT)');
+  await DB.run('CREATE TABLE IF NOT EXISTS dateEntry (id INTEGER PRIMARY KEY AUTOINCREMENT, start INT, end INT, title TEXT, description TEXT)');
   await DB.run('DELETE FROM dateEntry WHERE start IS NULL');
 });
 
-app.get('/addNumber', async (req, res) => {
-  await DB.run('INSERT INTO numbers (num) VALUES (?)',
-    Math.floor(Math.random() * 100)
-  )
-  res.end('Added number');
-});
-app.get('/deletenums', async (req, res) => {
-  await DB.exec('DELETE FROM numbers');
-  res.end('Deleted');
-});
 
 // post method to insert into database from html
-app.post('/insert', async (req, res) => {
+app.post('/event', async (req, res) => {
   const {start, end, title, description} = req.body;
   if(start > end){
     res.statusCode = 400;
@@ -45,7 +34,7 @@ app.post('/insert', async (req, res) => {
   res.end(JSON.stringify({Text: 'Added to database'}));
 });
 
-app.post('/getSavedEvents', async (req, res) =>{
+app.get('/event', async (req, res) =>{
   let dates = await DB.all('SELECT * FROM dateEntry')
   res.json(
     {
@@ -54,11 +43,13 @@ app.post('/getSavedEvents', async (req, res) =>{
   )
 });
 
-// delete data
-//app.delete()
+app.delete('/event/:id', async(req, res) => {
+  await DB.run('DELETE FROM dateEntry WHERE id = ?', req.params.id);
+  res.send("DELETE Request Called")
+})
 
 // update data
-//app.patch()
+//app.patch() 
 
 app.use(express.static('./build'));
 app.listen(80, () => {console.log('listening on port 80'); console.log('http://127.0.0.1:80');});

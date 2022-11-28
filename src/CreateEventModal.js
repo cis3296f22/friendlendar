@@ -63,7 +63,7 @@ function CreateEventModal(props) {
 
                                 console.log(start, end, title, description);
                                 
-                                const resolve = await post('/insert', {start, end, title, description});
+                                const resolve = await post('/event', {start, end, title, description});
                                 console.log(resolve);
                                 setDesc(null);
                                 setTitle(null);
