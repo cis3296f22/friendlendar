@@ -6,8 +6,7 @@ import React, { useState, useEffect } from 'react';
 import Calendar from 'react-calendar';
 import CreateEventModal from './CreateEventModal';
 import Event from './Event'
-import {get} from './utils.js';
-
+import { get } from './utils.js';
 
 function App() {
   const [date, setDate] = useState(new Date());
@@ -19,7 +18,7 @@ function App() {
     setDate(value)
   }
 
-  
+
   //console.log(dateObject);
   //let dataObjectSaved = dateObject;
 
@@ -28,7 +27,7 @@ function App() {
   //  dataObjectSaved = value;
   //})
 
-  
+
   //console.log(dataObjectSaved);
 
   //const dataArray = [{date: "jan 1", filledIn: true}, {}, {}]
@@ -39,28 +38,33 @@ function App() {
   //   setEventData(Data)
   // }
 
-  useEffect(() => {
-    get("/event").then(value =>{
+  const getEvents = async() => {
+    get("/event").then(value => {
       setEventData(value.Dates);
     })
+    console.log(eventData);
+  }
+
+  useEffect(() => {
+    getEvents();
   }, [])
   console.log(eventData);
-  
-  const [toggle,toggleOn]=useState(true)
+
+  const [toggle, toggleOn] = useState(true)
 
   return (
-    
+
     <div className="App">{
-      toggle?<h1 className="App-header">Friendlendar</h1>:null
+      toggle ? <h1 className="App-header">Friendlendar</h1> : null
     }{
-      toggle?<CreateEventModal date={date} closeModal={setShowModal} open={showModal}></CreateEventModal>:null
-    }{
-      toggle?<div className="centered">
-       <Calendar onChange={setDate} value={date} onClickDay={(value) => dateClicked(value)}/>
-      </div>:null
-    }
+        toggle ? <CreateEventModal date={date} closeModal={setShowModal} open={showModal} refetch={getEvents}></CreateEventModal> : null
+      }{
+        toggle ? <div className="centered">
+          <Calendar onChange={setDate} value={date} onClickDay={(value) => dateClicked(value)} />
+        </div> : null
+      }
       <div class="buttonHolder">
-      <button onClick={()=> toggleOn(!toggle)} data-cy="toggle">Toggle</button>
+        <button onClick={() => toggleOn(!toggle)} data-cy="toggle">Toggle</button>
       </div>
 
       {/* <div>
@@ -70,13 +74,13 @@ function App() {
       </div> */}
 
       <div>
-           {eventData.map( (data) => (
-            <Event key={data} event={data} />
-          ))}  
+        {eventData.map((data) => (
+          <Event key={data} event={data} refetch={getEvents}/>
+        ))}
       </div>
 
     </div>
-     );
+  );
 
 }
 

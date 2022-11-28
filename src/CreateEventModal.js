@@ -69,6 +69,7 @@ function CreateEventModal(props) {
                                 setTitle(null);
                                 setStartDate(null);
                                 setEndDate(null);
+                                await props.refetch();
                             }} data-cy='submit'>Submit</Button>
                         
                         </CardActions>
