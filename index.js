@@ -15,7 +15,7 @@ open({
 }).then(async (db) => {
   DB = db;
   await DB.run('CREATE TABLE IF NOT EXISTS numbers (num INT)');
-  await DB.run('CREATE TABLE IF NOT EXISTS dateEntry (start INT, end INT)');
+  await DB.run('CREATE TABLE IF NOT EXISTS dateEntry (start INT, end INT, title TEXT, description TEXT)');
   await DB.run('DELETE FROM dateEntry WHERE start IS NULL');
 });
 
@@ -32,15 +32,15 @@ app.get('/deletenums', async (req, res) => {
 
 // post method to insert into database from html
 app.post('/insert', async (req, res) => {
-  const {start, end} = req.body;
+  const {start, end, title, description} = req.body;
   if(start > end){
     res.statusCode = 400;
     res.end();
     return;
   }
   console.log(start, end);
-  await DB.run('INSERT INTO dateEntry (start, end) VALUES (?,?) ',
-    start, end
+  await DB.run('INSERT INTO dateEntry (start, end, title, description) VALUES (?,?,?,?) ',
+    start, end, title, description
   )
   res.end(JSON.stringify({Text: 'Added to database'}));
 });
@@ -53,6 +53,12 @@ app.post('/getSavedEvents', async (req, res) =>{
     }
   )
 });
+
+// delete data
+//app.delete()
+
+// update data
+//app.patch()
 
 app.use(express.static('./build'));
 app.listen(80, () => {console.log('listening on port 80'); console.log('http://127.0.0.1:80');});
