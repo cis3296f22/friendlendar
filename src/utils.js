@@ -16,7 +16,7 @@ export async function deleteEvent(url, data) {
       'Content-Type': 'application/json'
     }
   });
-  return await response.json();
+  return;
 }
 
 export async function get(url) {

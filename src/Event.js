@@ -2,7 +2,7 @@ import React from 'react';
 import { CardActions, Typography, CardContent, Button, Card } from "@mui/material"
 import {deleteEvent} from './utils.js';
 
-const Event = ({ event }) => (
+const Event = ({ event, refetch }) => (
 
   <div className='centered'><Card variant="outlined" sx={{ minWidth: 275, maxWidth: 500, border: 1, borderColor: 'error.dark' }}>
     <CardContent>
@@ -25,6 +25,7 @@ const Event = ({ event }) => (
       </Typography>
       <Button style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }} onClick={async () => {
         await deleteEvent('/event', event.id );
+        await refetch();
       }} data-cy='delete'>Delete</Button>
     </CardContent>
   </Card></div>
