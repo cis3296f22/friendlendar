@@ -32,6 +32,7 @@
   <script src="js/account.js"></script>
   <script src="js/homeContent.js"></script>
   <script src="js/calendarContent.js"></script>
+  <script src="js/aboutContent.js"></script>
 
   <div id="content">
 
@@ -45,7 +46,7 @@
   <div id="container"></div> <!-- this acts as a global variable? -->
 
   <script>
-    // Home | Account | Calendar
+    // Home | Account | Calendar | About
 
 
     var myNavList = [
@@ -65,7 +66,8 @@
 
         ]
       },
-      { linkText: "Calendar", linkURL: "#/Calendar", action: calendarContent }
+      { linkText: "Calendar", linkURL: "#/Calendar", action: calendarContent },
+      { linkText: "About", linkURL: "#/About", action: aboutContent }
     ];
 
     var myNav = MakeNavRouter({
