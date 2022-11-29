@@ -19,31 +19,44 @@
 }
 
 .centered {
-  height: auto; /* Magic here */
+  height: auto;
+  /* Magic here */
   display: flex;
   justify-content: center;
   align-items: flex-end;
 }
 
-.buttonHolder{
-  height: auto; /* Magic here */
+.buttonHolder {
+  height: auto;
+  /* Magic here */
   display: flex;
   justify-content: center;
   align-items: flex-end;
 }
 
-.buttonHolder button{
+.buttonHolder button {
+  text-decoration: none;
   background-color: #9D2235;
   color: white;
-  padding: 5px 15px;
+  padding: 7px 20px;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
+.buttonHolder button:hover {
+  background-color: #cb4a4a;
+  transform: scale(1.1, 1.1);
+  -webkit-transform: scale(1.1, 1.1);
+  -moz-transform: scale(1.1, 1.1);
+}
 
 .times_parent {
   display: flex;
   align-items: center;
   justify-content: center;
-} 
+}
 
 .times {
   display: flex;
@@ -68,24 +81,28 @@
 .modal {
   font-size: 12px;
 }
-.modal > .header {
+
+.modal>.header {
   width: 100%;
   border-bottom: 1px solid gray;
   font-size: 18px;
   text-align: center;
   padding: 5px;
 }
-.modal > .content {
+
+.modal>.content {
   width: 100%;
   padding: 10px 5px;
 }
-.modal > .actions {
+
+.modal>.actions {
   width: 100%;
   padding: 10px 5px;
   margin: auto;
   text-align: center;
 }
-.modal > .close {
+
+.modal>.close {
   cursor: pointer;
   position: absolute;
   display: block;

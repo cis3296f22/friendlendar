@@ -3,12 +3,18 @@
     color:rgb(255, 255, 255);
 }
 
+#nav {
+    color:rgb(255, 255, 255);
+}
+
 .NavRouter a { 
     text-decoration: none;  /* Do not want links in the NavRouter to be underlined */   
     color:rgb(255, 255, 255);
 }
 
 .NavRouter .NavGroup {
+
+    text-align: center;
 
     /* .NavGroup is a parent of SubMenu. Since we want to right justify the SubMenu with its parent,
     we assign "position relative" to .NavGroup and "position absolute" to the .SubMenu      */ 
@@ -18,27 +24,34 @@
     border-top-right-radius: 0.3rem;*/
     margin-right:0.1rem;
     padding:0.35rem;
-    padding-top:0.45rem;
-    padding-bottom:0.25rem;
 
     /* "display:inline-block" treats/positions divs like words (bottom justified)
     instead of like block/paragraph elements  (top justified) */
     display: inline-block;
 
-    font-size: 1rem;
+    font-size: 1.6rem;
     letter-spacing:0.05rem;
     font-weight:bold;
     cursor: pointer;  /* mouse pointer turns to "hand" when user hovers over a NavGroup */
+    
+    margin-top: 0.5rem;
+    border-radius: 10px;
+    margin-left: 5px;
+}
+
+.NavRouter .NavGroup:hover {
+    background-color: #cb4a4a;
 }
 
 .NavRouter .SubMenu a { 
-    font-size: 0.75rem;
+    font-size: 0.9rem;
     display: block;         /* all SubMenu links start on a new line */
-    border-bottom: 1px solid  #AAAAAA; /* a little darker than the submenu background */
+    border-radius: 10px;
+    padding:2px;
 }
 
 .NavRouter .SubMenu a:hover { 
-    color: goldenrod; 
+    background-color: #cb4a4a;
 }
 
 .NavRouter .SubMenu {
@@ -52,14 +65,13 @@
     background-color:  #9D2235; /* cherry red */ 
 
     border-radius: 0.25rem;
-    box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem rgba(0,0,0,0.6);
 
     /* animate hide and show (slow down the changes so you can see fading in or zooming in). */
     transition: all 1s ease 0s;
 
     /* position absolute aligns with its 1st non static parent (.NavGroup)  */
     position: absolute;
-    right: 0.75rem;  /* aligns right this absolute element with its relative parent */
+    right: 0;  /* aligns right this absolute element with its relative parent */
 
     z-index: 3;  /* higher z-index places the element on top, not underneath */
 }

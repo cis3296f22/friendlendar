@@ -7,21 +7,20 @@ const Event = ({ event, refetch }) => (
   <div className='centered'><Card variant="outlined" sx={{ minWidth: 275, maxWidth: 500, border: 1, borderColor: 'error.dark' }}>
     <CardContent>
       <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-        Title:
-        <div key={event.title}>{event.title}</div>
+        <h2 key={event.title}><b>TITLE:</b> {event.title}</h2>
       </Typography>
       <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-        Description:
-        <div key={event.description}>{event.description}</div>
+        
+        <div key={event.description}><b>DESCRIPTION:</b> {event.description}</div>
       </Typography>
 
       <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-        Start:
-        <div key={event.start}>{new Date(event.start).toString()}</div>
+        
+        <div key={event.start}><b>START:</b> {new Date(event.start).toString()}</div>
       </Typography>
       <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-        End:
-        <div key={event.end}>{new Date(event.end).toString()}</div>
+        
+        <div key={event.end}><b>END:</b> {new Date(event.end).toString()}</div>
       </Typography>
       <Button style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }} onClick={async () => {
         await deleteEvent('/event', event.id );
