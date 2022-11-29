@@ -32,7 +32,7 @@ function homeContent() {
   
   <div class="column">
     <h2>Friendlendar</h2>
-    <p>ADD DESCRIPTION HERE FOR FRIENDLENDAR</p>
+    <p>Friendlendar is an app that allows friends, clubs, colleagues to plan and organize their meetings and hangout in a easy and quick manner!</p>
     <button id="main_button" onclick="location.href='#/Calendar'" type="button">Friendlendar</button>
   </div>
 </div>
@@ -64,6 +64,7 @@ h1 {
 .row {
   display: inline-flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 </style>
 
