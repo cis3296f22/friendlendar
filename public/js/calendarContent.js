@@ -1,6 +1,8 @@
 "use strict";
 function calendarContent () {
 
+  var display_cal = document.getElementById("root");
+  display_cal.style.display = 'block';
 // ` this is a "back tick". You can use it to define multi-line strings in JavaScript.
 // 
 // NetBeans menu option "Source - Format" will not work with the text inside of a 
@@ -8,7 +10,7 @@ function calendarContent () {
 
 var content = `
 
-        <h1>Calendar Page!</h1>
+        <h1>Calendar</h1>
    
         <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
        

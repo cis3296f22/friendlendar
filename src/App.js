@@ -55,14 +55,13 @@ function App() {
   return (
 
     <div className="App">{
-      toggle ? <h1 className="App-header">Friendlendar</h1> : null
-    }{
         toggle ? <CreateEventModal date={date} closeModal={setShowModal} open={showModal} refetch={getEvents}></CreateEventModal> : null
       }{
         toggle ? <div className="centered">
           <Calendar onChange={setDate} value={date} onClickDay={(value) => dateClicked(value)} />
         </div> : null
       }
+      <br></br>
       <div class="buttonHolder">
         <button onClick={() => toggleOn(!toggle)} data-cy="toggle">Toggle</button>
       </div>
