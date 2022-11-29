@@ -1,138 +1,159 @@
 "use strict";
 var account = {};
 
-(function () {
-    account.logon = function () {
+(function(){
+account.logon = function () {
 
-        var display_cal = document.getElementById("root");
-        display_cal.style.display = 'none';
+   var userDiv = document.createElement("div");
+    userDiv.classList.add("find");
 
-        var userDiv = document.createElement("div");
-        userDiv.classList.add("find");
+    var userEmail = document.createElement('span');
+    userEmail.innerHTML = "Email Address: ";
+    userDiv.appendChild(userEmail);
 
-        var userEmail = document.createElement('span');
-        userEmail.innerHTML = "Email Address: ";
-        userDiv.appendChild(userEmail);
+    var userEmailInput = document.createElement("input");
+    userDiv.appendChild(userEmailInput);
 
-        var userEmailInput = document.createElement("input");
-        userDiv.appendChild(userEmailInput);
+    var userPassword = document.createElement('span');
+    userPassword.innerHTML = "Password: ";
+    userDiv.appendChild(userPassword);
 
-        var userPassword = document.createElement('span');
-        userPassword.innerHTML = "Password: ";
-        userDiv.appendChild(userPassword);
+    var userPassInput = document.createElement("input");
+    userPassInput.setAttribute("type", "password"); // so it shows dots not characters
+    userDiv.appendChild(userPassInput);
 
-        var userPassInput = document.createElement("input");
-        userPassInput.setAttribute("type", "password"); // so it shows dots not characters
-        userDiv.appendChild(userPassInput);
+    var content = `
+    <style>
 
-        // Note: for this lab activity, you may want to comment out setting the input type to password, 
-        // but you will certainly want to apply input type=password to the password text box 
-        // when you implement your own log on code.
+    body { 
+        background-image: url('https://blog.drupa.com/wp-content/uploads/2015/11/Calendar-1000x605.jpg');
+        background-size: cover;
+        background-blend-mode: lighten;  
+    }
 
-        var submitButton = document.createElement("button");
-        submitButton.innerHTML = "Submit";
-        userDiv.appendChild(submitButton);
+    </style>
+    `;
+    userDiv.innerHTML += content;
 
-        var msgDiv = document.createElement("div");
-        userDiv.appendChild(msgDiv);
+    // Note: for this lab activity, you may want to comment out setting the input type to password, 
+    // but you will certainly want to apply input type=password to the password text box 
+    // when you implement your own log on code.
 
-        submitButton.onclick = function () {
+    var submitButton = document.createElement("button");
+    submitButton.innerHTML = "Submit";
+    userDiv.appendChild(submitButton);
 
-            console.log("API still in progress");
-            // You have to encodeURI user input before putting into a URL for an AJAX call.
-            // Otherwise, your URL may be refused (for security reasons) by the web server.
-            /* var url = "webAPIs/logonAPI.jsp?email=" + escape(userEmailInput.value) + "&password=" + escape(userPassInput.value);
-     
-             console.log("onclick function will make AJAX call with url: " + url);
-             msgDiv.innerHTML = ajax(url, processLogon, msgDiv);
-             function processLogon(user) {
-                 var message = "";
-                 console.log("Successfully called the find API. Next line shows the returned object.");
-                 console.log(user);
-                 if (user.errorMsg.length > 0) {
-                     message += "<strong>Error: " + user.errorMsg + "</strong>";
-                 } else {
-                     message += "<strong>Welcome User: " + user.webUserId + "</strong>";
-                     message += "<p/><img src ='" + user.image + "'></p>";
-                     message += "<br/>Birthday: " + user.birthday;
-                     message += "<br/>MembershipFee: " + user.membershipFee;
-                     message += "<br/>User Role: " + user.userRoleId + " " + user.userRoleType;
-                 }
-                 msgDiv.innerHTML = message;
-             }/*/
-        };
-        return userDiv;
-    };
+    var msgDiv = document.createElement("div");
+    userDiv.appendChild(msgDiv);
 
-    account.createNewAccount = function () {
+    submitButton.onclick = function () {
 
-        var display_cal = document.getElementById("root");
-        display_cal.style.display = 'none';
-        
-        /*var userDiv = document.createElement("div");
-        userDiv.classList.add("find");
-        
-        var url = "webAPIs/getProfileAPI.jsp";
-        console.log("getProfile makes AJAX call with url: " + url);
-        
-        var msgDiv = document.createElement("div");
-        userDiv.appendChild(msgDiv);
-        
-        msgDiv.innerHTML = ajax(url, processProfile, msgDiv);
-            function processProfile(user) {
-               var message = "";
-                console.log("Successfully called the find API. Next line shows the returned object.");
-                console.log(user);
-                if (user.errorMsg === "Error, not logged in") {
-                    message += "<strong>Error: " + user.errorMsg + "</strong>";
-                } else {
-                    message += "<strong>Welcome User: " + user.webUserId + "</strong>";
-                    message += "<p/><img src ='" + user.image + "'></p>";
-                    message += "<br/>Birthday: " + user.birthday;
-                    message += "<br/>MembershipFee: " + user.membershipFee;
-                    message += "<br/>User Role: " + user.userRoleId + " " + user.userRoleType;
-                }
-                msgDiv.innerHTML = message;
+        console.log("API still in progress");
+        // You have to encodeURI user input before putting into a URL for an AJAX call.
+        // Otherwise, your URL may be refused (for security reasons) by the web server.
+       /* var url = "webAPIs/logonAPI.jsp?email=" + escape(userEmailInput.value) + "&password=" + escape(userPassInput.value);
+
+        console.log("onclick function will make AJAX call with url: " + url);
+        msgDiv.innerHTML = ajax(url, processLogon, msgDiv);
+        function processLogon(user) {
+            var message = "";
+            console.log("Successfully called the find API. Next line shows the returned object.");
+            console.log(user);
+            if (user.errorMsg.length > 0) {
+                message += "<strong>Error: " + user.errorMsg + "</strong>";
+            } else {
+                message += "<strong>Welcome User: " + user.webUserId + "</strong>";
+                message += "<p/><img src ='" + user.image + "'></p>";
+                message += "<br/>Birthday: " + user.birthday;
+                message += "<br/>MembershipFee: " + user.membershipFee;
+                message += "<br/>User Role: " + user.userRoleId + " " + user.userRoleType;
             }
-        return userDiv;*/
+            msgDiv.innerHTML = message;
+        }/*/
     };
+    return userDiv;
+};
 
-    account.logoff = function () {
+account.createNewAccount = function () {
+    
+    /*var userDiv = document.createElement("div");
+    userDiv.classList.add("find");
+    
+    var url = "webAPIs/getProfileAPI.jsp";
+    console.log("getProfile makes AJAX call with url: " + url);
+    
+    var msgDiv = document.createElement("div");
+    userDiv.appendChild(msgDiv);
+    
+    msgDiv.innerHTML = ajax(url, processProfile, msgDiv);
+        function processProfile(user) {
+           var message = "";
+            console.log("Successfully called the find API. Next line shows the returned object.");
+            console.log(user);
+            if (user.errorMsg === "Error, not logged in") {
+                message += "<strong>Error: " + user.errorMsg + "</strong>";
+            } else {
+                message += "<strong>Welcome User: " + user.webUserId + "</strong>";
+                message += "<p/><img src ='" + user.image + "'></p>";
+                message += "<br/>Birthday: " + user.birthday;
+                message += "<br/>MembershipFee: " + user.membershipFee;
+                message += "<br/>User Role: " + user.userRoleId + " " + user.userRoleType;
+            }
+            msgDiv.innerHTML = message;
+        }
+    return userDiv;*/
+};
 
-        var display_cal = document.getElementById("root");
-        display_cal.style.display = 'none';
+account.logoff = function () {
 
-        var logoff = document.createElement("div");
-        logoff.innerHTML = "Are You Sure?";
+    var display_cal = document.getElementById("root");
+    display_cal.style.display = 'none';
 
-        var submitButton = document.createElement("button");
-        submitButton.innerHTML = "Yes";
-        logoff.appendChild(submitButton);
+    var logoff = document.createElement("div");
+    logoff.innerHTML = "Are You Sure?";
+    
+    var submitButton = document.createElement("button");
+    submitButton.innerHTML = "Yes";
+    logoff.appendChild(submitButton);
 
-        submitButton.onclick = function () {
-            logoff.innerHTML = "<br>Logging Off";
-            console.log("Logging Off")
-        };
+    submitButton.onclick = function () {
+        logoff.innerHTML = "<br> Logging Off";
+        console.log("Logging Off")
+    };
+    
+    var content = `
+    <style>
 
-        return logoff;
-        /*
-        var logOffDiv = document.createElement("div");
-        logOffDiv.classList.add("find");
-        var url = "webAPIs/logOffAPI.jsp";
-        logOffDiv.innerHTML = ajax(url, processLogoff, logOffDiv);
-        function processLogoff(user) {
-             var message = "";
-             if(user.errorMsg.length > 0){
-                 console.log("logging off");
-                 message += "<strong>Successfully logged off!</strong>";
-             }else{
-                 console.log("failed to log off");
-                 message += "<strong>Logging Off!</strong>";
-             }
-             logOffDiv.innerHTML = message;
+    body { 
+        background-image: url('https://blog.drupa.com/wp-content/uploads/2015/11/Calendar-1000x605.jpg');
+        background-size: cover;
+        background-blend-mode: lighten;  
+    }
+
+    </style> 
+
+    `;
+
+    logoff.innerHTML += content;
+    return logoff;
+    /*
+    var logOffDiv = document.createElement("div");
+    logOffDiv.classList.add("find");
+    var url = "webAPIs/logOffAPI.jsp";
+    logOffDiv.innerHTML = ajax(url, processLogoff, logOffDiv);
+    function processLogoff(user) {
+         var message = "";
+         if(user.errorMsg.length > 0){
+             console.log("logging off");
+             message += "<strong>Successfully logged off!</strong>";
+         }else{
+             console.log("failed to log off");
+             message += "<strong>Logging Off!</strong>";
          }
-        return logOffDiv;*/
-    };
+         logOffDiv.innerHTML = message;
+     }
+    return logOffDiv;*/
+};
 
 
 
