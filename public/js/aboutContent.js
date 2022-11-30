@@ -52,7 +52,7 @@ function aboutContent() {  //developed using w3 schools
     <img src="https://media-exp1.licdn.com/dms/image/D4E03AQFHjm-6k1BRVw/profile-displayphoto-shrink_800_800/0/1665503711876?e=2147483647&v=beta&t=ab5cg3efWLWwMAe7YXZtcAwa3hwxh7N8vWWIfkpQjSw" alt="Elizabeth Wescott" width="600" height="400">
   </a>
   <div class="desc">Hi, I am Elizabeth! I also go by Liz. I am a senior at Temple University, where I study computer science. I chose this field because I didn't know exactly what I wanted to do, and I figured it would be a good option to discover what I really want to do since technology is intertwined with everything in today's day and age. I should graduate this spring, May 2023, and after graduation, I will start at Cigna as an analyst in their Technology Early Career Development Rotational Program. Through this program, I hope to continue to grow as a developer and find a path best for me.
-  Working on Friendlendar these past few weeks has been insightful and rewarding. I enjoyed learning new languages and technologies, working with my classmates, and overcoming obstacles every step of the way. It was a great experience to learn about the life cycle of a software project, that I will take with me on my next endeavor.</div>
+  Working on Friendlendar these past few weeks has been insightful and rewarding. I enjoyed learning new languages and technologies, working with my classmates, and overcoming obstacles every step of the way. </div>
 </div>
 
 <div class="gallery">
