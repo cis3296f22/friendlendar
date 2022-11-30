@@ -7,24 +7,103 @@ account.logon = function () {
    var userDiv = document.createElement("div");
     userDiv.classList.add("find");
 
-    var userEmail = document.createElement('span');
-    userEmail.innerHTML = "Email Address: ";
-    userDiv.appendChild(userEmail);
-
-    var userEmailInput = document.createElement("input");
-    userDiv.appendChild(userEmailInput);
-
-    var userPassword = document.createElement('span');
-    userPassword.innerHTML = "Password: ";
-    userDiv.appendChild(userPassword);
-
-    var userPassInput = document.createElement("input");
-    userPassInput.setAttribute("type", "password"); // so it shows dots not characters
-    userDiv.appendChild(userPassInput);
-
     var content = `
+
+    <div class="login-page">
+      <div class="form">
+        <div class="login">
+          <div class="login-header">
+            <h3><img src="header.png" alt="header" style="width: 275px"></h3>
+            <p>Please enter your credentials to login.</p>
+          </div>
+        </div>
+        <form class="login-form">
+          <input type="text" placeholder="username"/>
+          <input type="password" placeholder="password"/>
+          <button>login</button>
+          <p class="message">Not registered? <a href="#">Create an account</a></p>
+        </form>
+      </div>
+    </div>
+
     <style>
 
+    @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+    header .header{
+    background-color: #fff;
+    height: 45px;
+    }
+    header a img{
+    width: 134px;
+    margin-top: 4px;
+    }
+    .login-page {
+    width: 360px;
+    padding: 8% 0 0;
+    margin: auto;
+    }
+    .login-page .form .login{
+    margin-top: -31px;
+    margin-bottom: 26px;
+    }
+    .form {
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    max-width: 360px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    }
+    .form input {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+    }
+    .form button {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background-color: #9D2235;
+    background-image: linear-gradient(45deg,#9D2235,#9E4E23);
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+    }
+    .form .message {
+    margin: 15px 0 0;
+    color: #b3b3b3;
+    font-size: 12px;
+    }
+    .form .message a {
+    color: #9D2235;
+    text-decoration: none;
+    }
+
+    .container {
+    position: relative;
+    z-index: 1;
+    max-width: 300px;
+    margin: 0 auto;
+    }
+
+body {
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
     body { 
         background-image: url('https://blog.drupa.com/wp-content/uploads/2015/11/Calendar-1000x605.jpg');
         background-size: cover;
@@ -35,42 +114,6 @@ account.logon = function () {
     `;
     userDiv.innerHTML += content;
 
-    // Note: for this lab activity, you may want to comment out setting the input type to password, 
-    // but you will certainly want to apply input type=password to the password text box 
-    // when you implement your own log on code.
-
-    var submitButton = document.createElement("button");
-    submitButton.innerHTML = "Submit";
-    userDiv.appendChild(submitButton);
-
-    var msgDiv = document.createElement("div");
-    userDiv.appendChild(msgDiv);
-
-    submitButton.onclick = function () {
-
-        console.log("API still in progress");
-        // You have to encodeURI user input before putting into a URL for an AJAX call.
-        // Otherwise, your URL may be refused (for security reasons) by the web server.
-       /* var url = "webAPIs/logonAPI.jsp?email=" + escape(userEmailInput.value) + "&password=" + escape(userPassInput.value);
-
-        console.log("onclick function will make AJAX call with url: " + url);
-        msgDiv.innerHTML = ajax(url, processLogon, msgDiv);
-        function processLogon(user) {
-            var message = "";
-            console.log("Successfully called the find API. Next line shows the returned object.");
-            console.log(user);
-            if (user.errorMsg.length > 0) {
-                message += "<strong>Error: " + user.errorMsg + "</strong>";
-            } else {
-                message += "<strong>Welcome User: " + user.webUserId + "</strong>";
-                message += "<p/><img src ='" + user.image + "'></p>";
-                message += "<br/>Birthday: " + user.birthday;
-                message += "<br/>MembershipFee: " + user.membershipFee;
-                message += "<br/>User Role: " + user.userRoleId + " " + user.userRoleType;
-            }
-            msgDiv.innerHTML = message;
-        }/*/
-    };
     return userDiv;
 };
 
