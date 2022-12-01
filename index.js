@@ -1,11 +1,10 @@
 const sqlite3 = require('sqlite3');
 const { open } = require('sqlite');
 const express = require("express");
-// body parser to parse html
 const bodyParser = require('body-parser');
 const app = express();
 
-// parser 
+/** Parser for the json format */  
 app.use(bodyParser.json());
 
 let DB;
@@ -19,7 +18,7 @@ open({
 });
 
 
-// post method to insert into database from html
+/**post method to insert into database from the html.*/ 
 app.post('/event', async (req, res) => {
   const {start, end, title, description} = req.body;
   if(start > end){
@@ -34,6 +33,7 @@ app.post('/event', async (req, res) => {
   res.end(JSON.stringify({Text: 'Added to database'}));
 });
 
+/**get the date information from the database.*/
 app.get('/event', async (req, res) =>{
   let dates = await DB.all('SELECT * FROM dateEntry')
   res.json(
@@ -43,6 +43,7 @@ app.get('/event', async (req, res) =>{
   )
 });
 
+/**Deletes an event from the database.*/
 app.delete('/event/:id', async(req, res) => {
   await DB.run('DELETE FROM dateEntry WHERE id = ?', req.params.id);
   res.send("DELETE Request Called")
@@ -51,5 +52,6 @@ app.delete('/event/:id', async(req, res) => {
 // update data
 //app.patch() 
 
+/**Launches the production build on the correct port*/
 app.use(express.static('./build'));
 app.listen(80, () => {console.log('listening on port 80'); console.log('http://127.0.0.1:80');});
