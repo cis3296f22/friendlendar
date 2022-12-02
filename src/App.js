@@ -8,11 +8,38 @@ import CreateEventModal from './CreateEventModal';
 import Event from './Event'
 import { get } from './utils.js';
 
+/**
+ * 
+ * @return - the calendar application, modal and the toggle button
+ * @type {class}
+ */
 function App() {
+
+  /**
+   * @type {object}
+   * @constant 
+   * date stores the date that the user clicks on to bring up the modal
+   */
   const [date, setDate] = useState(new Date());
   // const [showTime, setShowTime] = useState(false);
+  /**
+   * @type {object}
+   * @constant
+   * showModal is the object that displays the modal to enter event information along with setShowModal that initialises the object
+   */
   const [showModal, setShowModal] = useState(false);
+   /**
+   * @type {object}
+   * @constant
+   * eventData is the object that stores the event information that the user enters
+   */
   const [eventData, setEventData] = useState([])
+
+  /**
+   * 
+   * @param value - value that is stored into date object when a date is clicked
+   * This function displays the modal once a user has clicked a date on the calendar 
+   */
   const dateClicked = (value) => {
     setShowModal(true)
     setDate(value)
@@ -38,6 +65,10 @@ function App() {
   //   setEventData(Data)
   // }
 
+  /**
+   * @constant
+   * uses a get request to constantly update the user events
+   */
   const getEvents = async() => {
     get("/event").then(value => {
       setEventData(value.Dates);
@@ -50,6 +81,11 @@ function App() {
   }, [])
   console.log(eventData);
 
+  /**
+   * @type {object}
+   * @constant
+   * toggle that displays the calendar onto the page or hides it
+   */
   const [toggle, toggleOn] = useState(true)
 
   return (
