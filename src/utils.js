@@ -1,6 +1,6 @@
 /**
  * RESTful API, used to store, retrieve, and delete data from the database to display on the Web Application UI.
- * @type API
+ * @type {API}
  * @exported - App.js, Event.js, CreateEventModal.js
  */
 

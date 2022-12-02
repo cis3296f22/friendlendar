@@ -8,10 +8,10 @@ import {deleteEvent} from './utils.js';
  */
 
 /** 
- * @return - Generates the event tile card for the user once they input the appropiate information through the Modal on the site.
+ * @return {event} Generates the event tile card for the user once they input the appropiate information through the Modal on the site.
  * @param event - Event object (includes Start, End, Title, and Description)
  * @param refetch - Function parameter, used to refresh the page automatically when an event is deleted.
- * @type Function/Class
+ * @type {class}
  * @constant
  */
 const Event = ({ event, refetch }) => (
