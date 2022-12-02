@@ -1,4 +1,32 @@
-"use strict";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: account.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: account.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>"use strict";
 var account = {};
 
 /** This function holds the account functionality  */ 
@@ -13,24 +41,24 @@ account.logon = function () {
 
     var content = `
 
-    <div class="login-page">
-      <div class="form">
-        <div class="login">
-          <div class="login-header">
-            <h3><img src="header.png" alt="header" style="width: 275px"></h3>
-            <p>Please enter your credentials to login.</p>
-          </div>
-        </div>
-        <form class="login-form">
-          <input type="text" placeholder="username"/>
-          <input type="password" placeholder="password"/>
-          <button>login</button>
-          <p class="message">Not registered? <a href="#">Create an account</a></p>
-        </form>
-      </div>
-    </div>
+    &lt;div class="login-page">
+      &lt;div class="form">
+        &lt;div class="login">
+          &lt;div class="login-header">
+            &lt;h3>&lt;img src="header.png" alt="header" style="width: 275px">&lt;/h3>
+            &lt;p>Please enter your credentials to login.&lt;/p>
+          &lt;/div>
+        &lt;/div>
+        &lt;form class="login-form">
+          &lt;input type="text" placeholder="username"/>
+          &lt;input type="password" placeholder="password"/>
+          &lt;button>login&lt;/button>
+          &lt;p class="message">Not registered? &lt;a href="#">Create an account&lt;/a>&lt;/p>
+        &lt;/form>
+      &lt;/div>
+    &lt;/div>
 
-    <style>
+    &lt;style>
 
     @import url(https://fonts.googleapis.com/css?family=Roboto:300);
     header .header{
@@ -114,7 +142,7 @@ body {
         background-blend-mode: lighten;  
     }
 
-    </style>
+    &lt;/style>
     `;
     userDiv.innerHTML += content;
 
@@ -140,13 +168,13 @@ account.createNewAccount = function () {
             console.log("Successfully called the find API. Next line shows the returned object.");
             console.log(user);
             if (user.errorMsg === "Error, not logged in") {
-                message += "<strong>Error: " + user.errorMsg + "</strong>";
+                message += "&lt;strong>Error: " + user.errorMsg + "&lt;/strong>";
             } else {
-                message += "<strong>Welcome User: " + user.webUserId + "</strong>";
-                message += "<p/><img src ='" + user.image + "'></p>";
-                message += "<br/>Birthday: " + user.birthday;
-                message += "<br/>MembershipFee: " + user.membershipFee;
-                message += "<br/>User Role: " + user.userRoleId + " " + user.userRoleType;
+                message += "&lt;strong>Welcome User: " + user.webUserId + "&lt;/strong>";
+                message += "&lt;p/>&lt;img src ='" + user.image + "'>&lt;/p>";
+                message += "&lt;br/>Birthday: " + user.birthday;
+                message += "&lt;br/>MembershipFee: " + user.membershipFee;
+                message += "&lt;br/>User Role: " + user.userRoleId + " " + user.userRoleType;
             }
             msgDiv.innerHTML = message;
         }
@@ -168,12 +196,12 @@ account.logoff = function () {
     logoff.appendChild(submitButton);
 
     submitButton.onclick = function () {
-        logoff.innerHTML = "<br> Logging Off";
+        logoff.innerHTML = "&lt;br> Logging Off";
         console.log("Logging Off")
     };
     
     var content = `
-    <style>
+    &lt;style>
 
     body { 
         background-image: url('https://blog.drupa.com/wp-content/uploads/2015/11/Calendar-1000x605.jpg');
@@ -181,7 +209,7 @@ account.logoff = function () {
         background-blend-mode: lighten;  
     }
 
-    </style> 
+    &lt;/style> 
 
     `;
 
@@ -196,10 +224,10 @@ account.logoff = function () {
          var message = "";
          if(user.errorMsg.length > 0){
              console.log("logging off");
-             message += "<strong>Successfully logged off!</strong>";
+             message += "&lt;strong>Successfully logged off!&lt;/strong>";
          }else{
              console.log("failed to log off");
-             message += "<strong>Logging Off!</strong>";
+             message += "&lt;strong>Logging Off!&lt;/strong>";
          }
          logOffDiv.innerHTML = message;
      }
@@ -208,4 +236,26 @@ account.logoff = function () {
 
 
 
-}());
+}());</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#MakeNavRouter">MakeNavRouter</a></li><li><a href="global.html#aboutContent">aboutContent</a></li><li><a href="global.html#calendarContent">calendarContent</a></li><li><a href="global.html#homeContent">homeContent</a></li><li><a href="global.html#navRouter">navRouter</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Fri Dec 02 2022 00:34:34 GMT-0500 (Eastern Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
