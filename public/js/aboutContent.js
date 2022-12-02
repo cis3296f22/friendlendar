@@ -1,4 +1,6 @@
 "use strict";
+
+/** This function uses the javascript to generate the HTML & CSS for the about page */
 function aboutContent() {  //developed using w3 schools
 
     var display_cal = document.getElementById("root");

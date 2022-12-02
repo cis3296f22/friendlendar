@@ -1,4 +1,6 @@
 "use strict";
+
+/** Generates the HTML & CSS for some of the Calender's main page */
 function calendarContent () {
 
   var display_cal = document.getElementById("root");
