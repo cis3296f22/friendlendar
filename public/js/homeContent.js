@@ -1,4 +1,6 @@
 "use strict";
+
+/** This function uses the javascript to generate the HTML & CSS for the home page */
 function homeContent() {
 
   var display_cal = document.getElementById("root");
