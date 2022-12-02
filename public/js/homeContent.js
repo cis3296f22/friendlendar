@@ -1,6 +1,13 @@
 "use strict";
 
-/** This function uses the javascript to generate the HTML & CSS for the home page */
+/** This class houses the function that generates the content for our home page 
+ *  @type {class}
+*/
+
+/** This function uses javascript to generate the HTML & CSS for the home page 
+ * @type {class}
+ * @return - Returns an element containing the HTML and CSS
+*/
 function homeContent() {
 
   var display_cal = document.getElementById("root");
