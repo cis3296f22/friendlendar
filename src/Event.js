@@ -2,6 +2,7 @@ import React from 'react';
 import { CardActions, Typography, CardContent, Button, Card } from "@mui/material"
 import {deleteEvent} from './utils.js';
 
+/** This will generate the event tile card for the user once they input the appropiate information through the Modal on the site. */
 const Event = ({ event, refetch }) => (
 
   <div className='centered'><Card variant="outlined" sx={{ minWidth: 275, maxWidth: 500, border: 1, borderColor: 'error.dark' }}>
