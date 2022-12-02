@@ -7,6 +7,7 @@ const app = express();
 /** Parser for the json format */  
 app.use(bodyParser.json());
 
+/** @file - database.sqlite is the Database that stores the data for each event (Start, End, Title, and Description) */
 let DB;
 open({
   filename: './database.sqlite',
@@ -18,7 +19,9 @@ open({
 });
 
 
-/**post method to insert into database from the html.*/ 
+/**post method to insert into database from the html.
+ * @async
+ */ 
 app.post('/event', async (req, res) => {
   const {start, end, title, description} = req.body;
   if(start > end){
@@ -33,7 +36,9 @@ app.post('/event', async (req, res) => {
   res.end(JSON.stringify({Text: 'Added to database'}));
 });
 
-/**get the date information from the database.*/
+/**get the date information from the database.
+ * @async
+*/
 app.get('/event', async (req, res) =>{
   let dates = await DB.all('SELECT * FROM dateEntry')
   res.json(
@@ -43,7 +48,9 @@ app.get('/event', async (req, res) =>{
   )
 });
 
-/**Deletes an event from the database.*/
+/**Deletes an event from the database.
+ * @async
+*/
 app.delete('/event/:id', async(req, res) => {
   await DB.run('DELETE FROM dateEntry WHERE id = ?', req.params.id);
   res.send("DELETE Request Called")
