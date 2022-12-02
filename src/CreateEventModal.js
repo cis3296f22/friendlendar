@@ -6,13 +6,44 @@ import { LocalizationProvider } from '@mui/x-date-pickers';
 import { DateTimePicker} from '@mui/x-date-pickers/DateTimePicker';
 import {post} from './utils.js'
 
+/**
+ * Modal that pops up on the website when a date is selected. The user can enter in information such as Start date, End date, Title, and Description.
+ * @type Class
+ */
 
+
+/** 
+ * @return - Generates the event creation tile card for the user once they click a date on the calendar the modal pops up and allows the user to input event information such as (Start, End, Title, and Description)
+ * @param props - Parameter that tells the modal when a date has been clicked in order to open the modal.
+ * @type Function/Class
+ */
 function CreateEventModal(props) {
 
+    /**
+     * @type Variable and set function
+     * @constant
+     * startDate stores the start date when an event is created. It's coinciding function setStartDate sets the variable when called.
+     */
     const [startDate, setStartDate] = React.useState(null);
+    /**
+     * @type Variable and set function
+     * @constant
+     * endDate stores the end date when an event is created. It's coinciding function setEndDate sets the variable when called.
+     */
     const [endDate, setEndDate] = React.useState(null);
+    /**
+     * @type Variable and set function
+     * @constant
+     * title stores the title when an event is created. It's coinciding function setTitle sets the variable when called.
+     */
     const [title, setTitle] = React.useState(null);
+    /**
+     * @type Variable and set function
+     * @constant
+     * description stores the description when an event is created. It's coinciding function setDesc sets the variable when called.
+     */
     const [description, setDesc] = React.useState(null);
+
 
     return(        
         <div>

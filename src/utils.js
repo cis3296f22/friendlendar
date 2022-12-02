@@ -1,5 +1,12 @@
-/** This function creates a template for post requests to be made at the correct url */
+/**
+ * RESTful API, used to store, retrieve, and delete data from the database to display on the Web Application UI.
+ * @type API
+ * @exported - App.js, Event.js, CreateEventModal.js
+ */
 
+/** This function creates a template for post requests to be made at the correct url 
+ * @async
+*/
 export async function post(url, data) {
   const response = await fetch(window.location.origin + url, {
     method: 'POST',
@@ -11,7 +18,9 @@ export async function post(url, data) {
   return await response.json();
 }
 
-/** This function allows for events to be deleted from the database at the correct url */
+/** This function allows for events to be deleted from the database at the correct url 
+ * @async
+*/
 export async function deleteEvent(url, data) {
   const response = await fetch(window.location.origin + url + "/" + data, {
     method: 'DELETE',
@@ -22,7 +31,9 @@ export async function deleteEvent(url, data) {
   return;
 }
 
-/** This function allows for information to be pulled in from the database at the correct url */
+/** This function allows for information to be pulled in from the database at the correct url 
+ * @async
+*/
 export async function get(url) {
   const response = await fetch(window.location.origin + url, {
     method: 'GET',
